@@ -27,7 +27,6 @@ enum AuthenticationState: Hashable {
 /// - Updating profile information.
 /// - Uploading and managing profile pictures.
 ///
-@MainActor
 class SessionStore: ObservableObject {
     
     // MARK: - Published Properties
@@ -49,10 +48,18 @@ class SessionStore: ObservableObject {
     
     // MARK: - Private Properties
     
-    private var authRepository: AuthRepository = .init()
-    private var firestoreRepository: FirestoreRepository = .init()
-    private var storageRepository: StorageRepository = .init()
+    private let authRepository: AuthRepositoryInterface
+    private let firestoreRepository: FirestoreRepositoryInterface
+    private let storageRepository: StorageRepositoryInterface
     
+    init(
+        authRepository: AuthRepositoryInterface = AuthRepository(),
+        firestoreRepository: FirestoreRepositoryInterface = FirestoreRepository(),
+        storageRepository: StorageRepositoryInterface = StorageRepository()) {
+            self.authRepository = authRepository
+            self.firestoreRepository = firestoreRepository
+            self.storageRepository = storageRepository
+    }
 
     // MARK: - Authentication
     
@@ -62,6 +69,7 @@ class SessionStore: ObservableObject {
     ///   - fullname: The full name of the new user.
     ///   - email: The email address of the new user.
     ///   - password: The password for the account.
+    @MainActor
     func signUp(fullname: String, email: String, password: String) async {
         self.error = nil
         self.isLoading = true
@@ -77,7 +85,7 @@ class SessionStore: ObservableObject {
             self.session = user
             self.authenticationState = .signedIn
         } catch {
-            self.error = error.localizedDescription
+            self.error = authRepository.identifyError(error)
         }
     }
 
@@ -86,6 +94,7 @@ class SessionStore: ObservableObject {
     /// - Parameters:
     ///   - email: The user's email.
     ///   - password: The user's password.
+    @MainActor
     func signIn(email: String, password: String) async {
         self.error = nil
         self.isLoading = true
@@ -103,6 +112,7 @@ class SessionStore: ObservableObject {
     }
 
     /// Signs out the current user.
+    @MainActor
     func signOut() {
         self.error = nil
         do {
@@ -121,6 +131,7 @@ class SessionStore: ObservableObject {
     ///
     /// - Parameter uid: The unique identifier of the user.
     /// - Returns: A `User` object or `nil` if fetching fails.
+    @MainActor
     private func fetchUser(with uid: String?) async -> User? {
         self.error = nil
         do {
@@ -134,6 +145,7 @@ class SessionStore: ObservableObject {
     /// Updates the currently signed-in user's full name.
     ///
     /// - Parameter fullname: The new full name of the user.
+    @MainActor
     func updateUser(fullname: String) async {
         self.error = nil
         guard var user = session else {
@@ -156,6 +168,7 @@ class SessionStore: ObservableObject {
     /// Uploads a new profile image for the user.
     ///
     /// - Parameter image: The image to upload.
+    @MainActor
     func uploadImage(_ image: UIImage) async {
         self.error = nil
         guard var user = session else {

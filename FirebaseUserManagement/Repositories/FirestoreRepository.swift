@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-class FirestoreRepository {
+class FirestoreRepository: FirestoreRepositoryInterface {
     let db = Firestore.firestore()
     
     func fetchUser(with uid: String) async throws -> User? {

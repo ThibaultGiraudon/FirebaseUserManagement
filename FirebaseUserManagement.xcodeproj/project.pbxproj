@@ -12,14 +12,30 @@
 		CE5CEA4C2E8683C300952A1C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE5CEA4B2E8683C300952A1C /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE5CEA6B2E86B7DD00952A1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE5CEA2E2E86823200952A1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE5CEA352E86823200952A1C;
+			remoteInfo = FirebaseUserManagement;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CE5CEA362E86823200952A1C /* FirebaseUserManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseUserManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5CEA672E86B7DD00952A1C /* FirebaseUserManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseUserManagementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CE5CEA382E86823200952A1C /* FirebaseUserManagement */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = FirebaseUserManagement;
+			sourceTree = "<group>";
+		};
+		CE5CEA682E86B7DD00952A1C /* FirebaseUserManagementTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FirebaseUserManagementTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +51,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE5CEA642E86B7DD00952A1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5CEA382E86823200952A1C /* FirebaseUserManagement */,
+				CE5CEA682E86B7DD00952A1C /* FirebaseUserManagementTests */,
 				CE5CEA372E86823200952A1C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5CEA362E86823200952A1C /* FirebaseUserManagement.app */,
+				CE5CEA672E86B7DD00952A1C /* FirebaseUserManagementTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +107,29 @@
 			productReference = CE5CEA362E86823200952A1C /* FirebaseUserManagement.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CE5CEA662E86B7DD00952A1C /* FirebaseUserManagementTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE5CEA6D2E86B7DD00952A1C /* Build configuration list for PBXNativeTarget "FirebaseUserManagementTests" */;
+			buildPhases = (
+				CE5CEA632E86B7DD00952A1C /* Sources */,
+				CE5CEA642E86B7DD00952A1C /* Frameworks */,
+				CE5CEA652E86B7DD00952A1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE5CEA6C2E86B7DD00952A1C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CE5CEA682E86B7DD00952A1C /* FirebaseUserManagementTests */,
+			);
+			name = FirebaseUserManagementTests;
+			packageProductDependencies = (
+			);
+			productName = FirebaseUserManagementTests;
+			productReference = CE5CEA672E86B7DD00952A1C /* FirebaseUserManagementTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -94,6 +142,10 @@
 				TargetAttributes = {
 					CE5CEA352E86823200952A1C = {
 						CreatedOnToolsVersion = 26.0;
+					};
+					CE5CEA662E86B7DD00952A1C = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = CE5CEA352E86823200952A1C;
 					};
 				};
 			};
@@ -115,12 +167,20 @@
 			projectRoot = "";
 			targets = (
 				CE5CEA352E86823200952A1C /* FirebaseUserManagement */,
+				CE5CEA662E86B7DD00952A1C /* FirebaseUserManagementTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE5CEA342E86823200952A1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE5CEA652E86B7DD00952A1C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -137,7 +197,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE5CEA632E86B7DD00952A1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE5CEA6C2E86B7DD00952A1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE5CEA352E86823200952A1C /* FirebaseUserManagement */;
+			targetProxy = CE5CEA6B2E86B7DD00952A1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE5CEA3F2E86823300952A1C /* Debug */ = {
@@ -325,6 +400,48 @@
 			};
 			name = Release;
 		};
+		CE5CEA6E2E86B7DD00952A1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T6PF4S9ABL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thibaultgiraudon.FirebaseUserManagementTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseUserManagement.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FirebaseUserManagement";
+			};
+			name = Debug;
+		};
+		CE5CEA6F2E86B7DD00952A1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T6PF4S9ABL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = thibaultgiraudon.FirebaseUserManagementTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseUserManagement.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FirebaseUserManagement";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -342,6 +459,15 @@
 			buildConfigurations = (
 				CE5CEA422E86823300952A1C /* Debug */,
 				CE5CEA432E86823300952A1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE5CEA6D2E86B7DD00952A1C /* Build configuration list for PBXNativeTarget "FirebaseUserManagementTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE5CEA6E2E86B7DD00952A1C /* Debug */,
+				CE5CEA6F2E86B7DD00952A1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

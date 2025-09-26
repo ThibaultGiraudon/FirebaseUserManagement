@@ -8,8 +8,12 @@
 import Foundation
 import FirebaseAuth
 
-class AuthRepository {
-    let auth = Auth.auth()
+class AuthRepository: AuthRepositoryInterface {
+    let auth: Auth
+    
+    init() {
+        auth = Auth.auth()
+    }
     
     func signUp(email: String, password: String) async throws -> String {
         let result = try await auth.createUser(withEmail: email, password: password)

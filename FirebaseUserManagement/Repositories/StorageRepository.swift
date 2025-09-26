@@ -8,7 +8,7 @@
 import FirebaseStorage
 import SwiftUI
 
-class StorageRepository {
+class StorageRepository: StorageRepositoryInterface {
     let storage: Storage
     let ref: StorageReference
     
